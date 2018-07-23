@@ -26,7 +26,7 @@ Browse and inspect the evolution of project files:
 
 | Command                                        | Description                                                          |
 | ---------------------------------------------- | -------------------------------------------------------------------- |
-| `git log`                                      | Lists version history for the current branch                         |
+| `git log` or `git log -<n>`                    | Lists version history for the current branch                         |
 | `git log --pretty=oneline`                     | Git Basics - Viewing the Commit History                              |
 | `git log --pretty=format:"%h - %an, %ar : %s"` | https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History |
 | `git log --follow [file]`                      | Lists version history for a file, including renames                  |
@@ -39,18 +39,7 @@ Erase mistakes and craft replacement history
 | Command                     | Description                                                   |
 | --------------------------- | ------------------------------------------------------------- |
 | `git reset [commit]`        | Undoes all commits after [commit], preserving changes locally |
+| `git reset HEAD~<n>`        | Undoes last n commits                                         |
 | `git reset --hard [commit]` | Discards all history and changes back to the specified commit |
 
-### Resetting remote to a certain commit
-
-Assuming that your branch is called master both here and remotely, and that your remote is called origin you could do:
-
-```shell
-
- //Undoes all commits after [commit]
- git reset --hard <commit-hash>
- git push -f origin master
-
-```
-
-*note: `git remote -v` to get remote information, `git log --pretty=oneline` or `git log -2`  to show version heisotry*
+Using `git push -f origin <your_branch>` to push it to remote branch.
